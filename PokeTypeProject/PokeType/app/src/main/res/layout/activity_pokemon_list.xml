@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainFragLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PokemonLists.pokemon_list">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:background="#F2000000"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <Spinner
+            android:id="@+id/PlayerNamesForGrids"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D8302F2F"
+            app:tabIndicatorColor="@color/tabindicatorcolor"
+            app:tabSelectedTextColor="@color/selectedtextcolor"
+            app:tabTextColor="@color/tabtextcolor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <FrameLayout
+            android:id="@+id/Frag"
+            android:layout_width="match_parent"
+            android:layout_height="551dp"
+            android:layout_gravity="bottom"
+            android:background="#000"/>
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.poketype.PokemonLists.main.PlaceholderFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="myfrag"/>
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:backgroundTint="#00292828"
+        android:clickable="true"
+        app:layout_anchor="@+id/view_pager"
+        app:layout_anchorGravity="bottom|center"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

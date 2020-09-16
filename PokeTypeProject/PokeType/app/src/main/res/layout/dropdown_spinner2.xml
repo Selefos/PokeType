@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spinnerColors"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:textSize="25sp"
+    android:textAlignment="center"
+    android:background="#3B3B3B"
+    android:textColor="#F24189A6"
+    >
+</CheckedTextView>

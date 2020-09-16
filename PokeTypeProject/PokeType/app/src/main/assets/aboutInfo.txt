@@ -1,0 +1,151 @@
+FILTERED NAMES:
+
+Nidoran-F		(Female)
+Nidoran-M		(Male)
+
+Unkown-A
+Unkown-B
+Unkown-C
+Unkown-D
+Unkown-E
+Unkown-F
+Unkown-G
+Unkown-H
+Unkown-I
+Unkown-J
+Unkown-K
+Unkown-L
+Unkown-M
+Unkown-N
+Unkown-O
+Unkown-P
+Unkown-Q
+Unkown-R
+Unkown-S
+Unkown-T
+Unkown-U
+Unkown-V
+Unkown-W
+Unkown-X
+Unkown-Y
+Unkown-Z
+Unkown-!
+Unkown-?
+
+Castform		(Normal Forme)
+Castform-F		(Fire Forme)
+Castform-I		(Ice Forme)
+Castform-W		(Water Forme)
+
+Burmy-P			(Plant Cloak)
+Burmy-S			(Sandy Cloak)
+Burmy-T			(Trash Cloak)
+
+Wormadam-P		(Plant Cloak)
+Wormadam-S		(Sandy Cloak)
+Wormadam-T		(Trash Cloak)
+
+Cherrim-O		(Overcast)
+Cherrim-S		(Sunshine)
+
+Shellos-E		(East)
+Shellos-W		(West)
+
+Gastrodon-E		(East)
+Gastrodon-W		(West)
+
+Rotom			(Normal Rotom)
+Rotom-H			(Heat Rotom)
+Rotom-FL		(Fan Rotom)
+Rotom-M			(Maw Rotom)
+Rotom-FR		(Frost Rotom)
+Rotom-W			(Wash Rotom)
+
+Giratina-A		(Altered Forme)
+Giratina-O		(Origin Forme)
+
+Shaymin-L		(Land Forme)
+Shaymin-S		(Sky Forme)
+
+Basculin-B		(Blue Strippe)
+Basculin-R		(Red Strippe)
+
+Darmanitan
+Darmanitan-Z 	(Zen Mode)
+
+Deerling-A		(Autumn)
+Deerling-SP		(Spring)
+Deerling-SU		(Summer)
+Deerling-W		(Winter)
+
+Sawsbuck-A		(Autumn)
+Sawsbuck-SP		(Spring)
+Sawsbuck-SU		(Summer)
+Sawsbuck-W		(Winter)
+
+Meloetta-A		(Aria Forme)
+Meloetta-P		(Pirouette Forme)
+
+
+
+                                ALOLA FORMES
+
+
+A-Rattata      (Rattata Alola Forme)
+A-Raticate    (Raticate Alola Forme)
+
+A-Raichu   (Raichu Alola Forme)
+
+A-Sandrshrew   (Sandshrew Alola Forme)
+A-Sandslash     (Sandslash Alola Forme)
+
+A-Vulpix          (Vulpix Alola Forme)
+A-Ninetales    (Ninetales Alola Forme)
+
+A-Diglett       (Diglett Alola Forme)
+A-Dugtrio      (Dugtrio Alola Forme)
+
+A-Meowth   (Meowth Alola Forme)
+A-Persian    (Persian Alola Forme)
+
+A-Geodude    (Geodude Alola Forme)
+A-Graveler     (Graveler Alola Forme)
+A-Golem        (Golem Alola Forme)
+
+A-Grimer   (Grimer Alola Forme)
+A-Muk       (Muk Alola Forme)
+
+A-Exeguttor   (Exeggutor Alola Forme)
+
+A-Marowak   (Marowak Alola Forme)
+
+
+
+                                GALARIAN FORMES
+
+
+G-Meowth        (Meowth Galarian Forme)
+
+G-Ponyta            (Ponyta Galarian Forme)
+G-Rapidash      (Rapidash Galarian Forme)
+
+G-Slowpoke      (Slowpoke Galarian Forme)
+G-Slowbro        (Slowbro Galarian Forme)
+
+G-Farfetch'd     (Farfetch'd Galarian Forme)
+
+G-Weezing       (Weezing Galarian Forme)
+
+G-Mr.Mime    (Mr.Mime Galarian Forme)
+
+G-Corsola    (Corsola Galarian Forme)
+
+G-Zigzagoon     (Zigzagoon Galarian Forme)
+G-Linoone            (Linoone Galarian Forme)
+
+G-Darumaka      (Darumaka Galarian Forme)
+G-Darmanitan    (Darmanitan Galarian Forme)
+
+G-Yamask    (Yamask Galarian Forme)
+
+G-Stunfisk   (Stunfisk Galarian Forme)

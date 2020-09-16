@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LpkmnFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c2a2d"
+    android:clickable="true"
+    android:tag="@string/Regular_Trades"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/LPokemonText"
+        android:theme="@android:style/Theme.Holo"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
+        android:textColor="#FFFFFF"
+        android:hint="Enter name"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/luckysprtBT"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="4dp"
+        android:background="@android:color/transparent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/LPokemonText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/Lpokemonimagechoice"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/questionmark"
+        android:contentDescription="@string/Lucky_Trades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/LPokemonText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/luckysprtBT2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="4dp"
+        android:background="@android:color/transparent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toEndOf="@+id/LPokemonText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/Lpokemonimagechoice2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/questionmark"
+        android:contentDescription="@string/Lucky_Trades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/LPokemonText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Ldelete_selectionBT"
+        android:visibility="invisible"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/deleteselection"
+        android:text="Delete Selected"
+        android:textColor="#FFFEFE"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/Lcancel_selection"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/cancel"
+        android:text="Cancel"
+        android:textColor="#FFFEFE"
+        android:textSize="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Ldelete_selectionBT"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <GridView
+        android:id="@+id/gridLucky"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:background="#2c2a2d"
+        android:columnWidth="96dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:textAlignment="gravity"
+        android:verticalSpacing="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/luckysprtBT"
+        app:layout_constraintVertical_bias="1.0">
+
+    </GridView>
+
+    <TextView
+        android:id="@+id/LnameText"
+        android:layout_width="18dp"
+        android:layout_height="2dp"
+        android:textColor="#000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

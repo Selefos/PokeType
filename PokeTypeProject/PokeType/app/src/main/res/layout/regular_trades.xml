@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RpkmnFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c2a2d"
+    android:clickable="true"
+    android:tag="@string/Regular_Trades"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/PokemonText"
+        android:theme="@android:style/Theme.Holo"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        android:hint="Enter name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/regularsprtBT"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="right"
+        android:background="@android:color/transparent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/PokemonText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/pokemonimagechoice"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/questionmark"
+        android:contentDescription="@string/Regular_Trades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PokemonText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/delete_selectionBT"
+        android:visibility="invisible"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/deleteselection"
+        android:text="Delete Selected"
+        android:textColor="#FFFEFE"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/cancel_selection"
+        android:visibility="invisible"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/cancel"
+        android:text="Cancel"
+        android:textColor="#FFFEFE"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/delete_selectionBT"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <GridView
+        android:id="@+id/gridRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:background="#2c2a2d"
+        android:columnWidth="96dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:textAlignment="gravity"
+        android:verticalSpacing="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regularsprtBT"
+        app:layout_constraintVertical_bias="1.0">
+
+    </GridView>
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="28dp"
+        android:layout_height="20dp"
+        android:textColor="#000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

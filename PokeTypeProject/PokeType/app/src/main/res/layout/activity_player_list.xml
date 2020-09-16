@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayoutID"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundpllist"
+    tools:context=".PlayerList.playerList">
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/SearchRow"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.919"/>
+
+    <EditText
+        android:id="@+id/SearchRow2"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <Spinner
+        android:id="@+id/spinnerPlayer"
+        android:layout_width="145dp"
+        android:layout_height="32dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994"/>
+
+    <Spinner
+        android:id="@+id/spinnerTeam"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994"/>
+
+    <EditText
+        android:id="@+id/PlayerText"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/playerview"
+        android:gravity="center"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:shadowColor="#FFFDFC"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#150E0E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <TextView
+        android:id="@+id/wins"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/databaseviewfields"
+        android:gravity="center"
+        android:text="Wins"
+        android:textColor="#816308"
+        app:layout_constraintBottom_toTopOf="@+id/editwins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerText" />
+
+    <TextView
+        android:id="@+id/losses"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/databaseviewfields"
+        android:gravity="center"
+        android:text="Losses"
+        android:textColor="#816308"
+        app:layout_constraintBottom_toTopOf="@+id/editlosses"
+        app:layout_constraintEnd_toStartOf="@+id/daystobest"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/wins"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerText" />
+
+    <TextView
+        android:id="@+id/daystobest"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/databaseviewfields"
+        android:gravity="center"
+        android:text="Days to Best"
+        android:textColor="#816308"
+        app:layout_constraintBottom_toTopOf="@+id/editdays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerText" />
+
+    <EditText
+        android:id="@+id/editlosses"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editdays"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/editwins"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <EditText
+        android:id="@+id/editwins"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236"/>
+
+    <EditText
+        android:id="@+id/editdays"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236"/>
+
+    <EditText
+        android:id="@+id/teamlist"
+        android:visibility="invisible"
+        android:layout_width="95dp"
+        android:layout_height="47dp"
+        android:background="@drawable/playerview"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323"/>
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/savebt"
+        android:text="SAVE"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/deletebt"
+        android:text="DELETE"
+
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <Button
+        android:id="@+id/pkmnlist"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/listbutton"
+        android:text="List"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <Switch
+        android:id="@+id/edit_values"
+        android:layout_width="86dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="16dp"
+        android:text="Edit"
+        android:textColor="#FF00B5C9"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
