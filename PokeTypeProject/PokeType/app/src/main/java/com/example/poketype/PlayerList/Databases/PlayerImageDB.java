@@ -51,10 +51,19 @@ public class PlayerImageDB extends SQLiteOpenHelper
     public void addTable(String PlayerName)
     {
         SQLiteDatabase db = getWritableDatabase();
-        String createTablePlayer = " CREATE TABLE " + PlayerName + " (ID INTEGER PRIMARY KEY , " +
+        String createTablePlayer = "CREATE TABLE " + PlayerName + " (ID INTEGER PRIMARY KEY , " +
                 "POKEMONNAME TEXT, IMAGE_R BLOB)";
 
         db.execSQL(createTablePlayer);
+        db.close();
+    }
+
+    public void updateTable(String PlayerName, String PlayerNameUpdate)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateTablePlayer = "ALTER TABLE " + PlayerName + " RENAME TO " + PlayerNameUpdate;
+
+        db.execSQL(updateTablePlayer);
         db.close();
     }
 

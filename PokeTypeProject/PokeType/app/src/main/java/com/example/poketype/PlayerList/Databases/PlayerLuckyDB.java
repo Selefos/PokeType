@@ -58,12 +58,20 @@ public class PlayerLuckyDB extends SQLiteOpenHelper
         db.close();
     }
 
+    public void updateTable(String PlayerName, String PlayerNameUpdate)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateTablePlayer = "ALTER TABLE " + PlayerName + " RENAME TO " + PlayerNameUpdate;
+
+        db.execSQL(updateTablePlayer);
+        db.close();
+    }
+
     public void deleteTableL(String PlayerName)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + PlayerName);
     }
-
 
     public List<String> GetTableNamesL()
     {

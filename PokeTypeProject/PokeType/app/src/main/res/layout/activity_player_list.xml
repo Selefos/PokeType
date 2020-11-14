@@ -9,17 +9,17 @@
     tools:context=".PlayerList.playerList">
 
 
-    <LinearLayout
-        android:id="@+id/LinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:focusableInTouchMode="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+   <LinearLayout
+       android:id="@+id/LinearLayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="horizontal"
+       android:focusableInTouchMode="true"
+       android:focusable="true"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
 
 
     <TextView
@@ -251,13 +251,27 @@
         android:background="@drawable/savebt"
         android:text="SAVE"
         android:textColor="#FFFFFF"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.426" />
+
+    <Button
+        android:id="@+id/rename"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/deletebt"
+        android:text="RENAME"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save"
+        app:layout_constraintVertical_bias="0.029" />
 
     <Button
         android:id="@+id/delete"
@@ -266,14 +280,13 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/deletebt"
         android:text="DELETE"
-
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/background"
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintTop_toBottomOf="@+id/rename"
+        app:layout_constraintVertical_bias="0.029" />
 
     <Button
         android:id="@+id/pkmnlist"
@@ -308,5 +321,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337" />
+
+   <TextView
+       android:id="@+id/textForTableUpdate"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       app:layout_constraintBottom_toTopOf="@+id/spinnerPlayer"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/editlosses" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

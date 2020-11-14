@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.poketype">
 
     <supports-screens
@@ -19,7 +20,7 @@
         <activity
             android:name=".AboutInfo"
             android:label="@string/title_activity_about_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PokemonLists.pokemon_list"
             android:label="@string/title_activity_pokemon_list"
@@ -37,8 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlayerList.Databases.DatabaseHandler" />
-        <activity android:name=".PokemonLists.main.SectionsPagerAdapter" />
+        <activity android:name=".PlayerList.Databases.DatabaseHandler"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".PokemonLists.main.SectionsPagerAdapter"
+            tools:ignore="Instantiatable" />
     </application>
 
 </manifest>

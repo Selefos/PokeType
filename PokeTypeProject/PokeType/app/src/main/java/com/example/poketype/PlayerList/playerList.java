@@ -58,13 +58,13 @@ public class playerList extends AppCompatActivity
     PlayerLuckyDB plrLuckyDB;
     /*----------------------*/
 
-    Button editvalue;
-    Button editvalue2;
     Button editsave;
     Button editdelete;
     Button listGrid;
+    Button renamePlayer;
 
     TextView background;
+    TextView playerTableUpdate;
     EditText editwin, editloss, editdays, editname, editteam, SearchRow, SearchRow2;
     String searchRow;
     Spinner spinnerPlayername;
@@ -88,6 +88,7 @@ public class playerList extends AppCompatActivity
         init();
         hideKeyboardUnfocus();
         onSave();
+        renamePlayer();
         spinnerPlayer();
         PopulateSpinner();
         PopulateTEAM();
@@ -105,24 +106,26 @@ public class playerList extends AppCompatActivity
         plrShinyDB = new PlayerShinyDB(this);
         plrLuckyDB = new PlayerLuckyDB(this);
 
-        editsave = (Button) findViewById(R.id.save);
-        editdelete = (Button) findViewById(R.id.delete);
-        listGrid = (Button) findViewById(R.id.pkmnlist);
+        editsave = findViewById(R.id.save);
+        renamePlayer = findViewById(R.id.rename);
+        editdelete =  findViewById(R.id.delete);
+        listGrid = findViewById(R.id.pkmnlist);
 
-        mLinearLayout = (LinearLayout) findViewById(R.id.LinearLayout);
-        background = (TextView) findViewById(R.id.background);
+        mLinearLayout = findViewById(R.id.LinearLayout);
+        background = findViewById(R.id.background);
 
-        editname = (EditText) findViewById(R.id.PlayerText);
-        editwin = (EditText) findViewById(R.id.editwins);
-        editloss = (EditText) findViewById(R.id.editlosses);
-        editdays = (EditText) findViewById(R.id.editdays);
-        editteam = (EditText) findViewById(R.id.teamlist);
-        SearchRow = (EditText) findViewById(R.id.SearchRow);
-        SearchRow2 = (EditText) findViewById(R.id.SearchRow2);
+        editname = findViewById(R.id.PlayerText);
+        editwin = findViewById(R.id.editwins);
+        editloss = findViewById(R.id.editlosses);
+        editdays = findViewById(R.id.editdays);
+        editteam = findViewById(R.id.teamlist);
+        SearchRow = findViewById(R.id.SearchRow);
+        SearchRow2 = findViewById(R.id.SearchRow2);
+        playerTableUpdate = findViewById(R.id.textForTableUpdate);
 
-        spinnerPlayername = (Spinner) findViewById(R.id.spinnerPlayer);
-        spinnerTeam = (Spinner) findViewById(R.id.spinnerTeam);
-        switchEdit = (Switch) findViewById(R.id.edit_values);
+        spinnerPlayername = findViewById(R.id.spinnerPlayer);
+        spinnerTeam = findViewById(R.id.spinnerTeam);
+        switchEdit = findViewById(R.id.edit_values);
 
     }//ends Init
 
@@ -256,7 +259,6 @@ public class playerList extends AppCompatActivity
                      *
                      */
 
-
                     //For comparison editname string with string in cursor as fetched in LoadData function
                     String compareEditTextString = editname.getText().toString();
                     String compareCursorString = searchRow;
@@ -336,6 +338,7 @@ public class playerList extends AppCompatActivity
                                 && !compareEditTextString.equalsIgnoreCase(compareDuplicateInDB) && !checkForSymbol
                                 && compareEditTextString.charAt(0) != stringPositionOne)
                         {
+
                             InsertData();
                             createTable();
                         }
@@ -361,6 +364,109 @@ public class playerList extends AppCompatActivity
         });
 
     }//ends onSave
+
+
+    @SuppressLint("ClickableViewAccessibility")
+    public void renamePlayer()
+    {
+        renamePlayer.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+
+                if(event.getAction() == MotionEvent.ACTION_DOWN)
+                renamePlayer.setTextColor(Color.parseColor("#02E1FD"));
+
+                if(event.getAction() == MotionEvent.ACTION_UP)
+                {
+
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(playerList.this);
+                    builder.setMessage("Rename player"+" to \"" + editname.getText().toString() + "\"");
+                    builder.setCancelable(true);
+
+                    builder.setNegativeButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i)
+                        {
+
+
+                            //For comparison editname string with string in cursor as fetched in LoadData function
+                            String compareEditTextString = editname.getText().toString();
+                            String compareCursorString = searchRow;
+
+
+                            DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+                            List<String> compare = new ArrayList<String>();
+                            compare = db.getColumnNames();
+
+
+                            //transfers List<String> values to String Array Object[]
+                            Object[] stringArray = compare.toArray();
+                            String compareDuplicateInDB = null;
+
+                            for (Object o : stringArray) {
+                                String ignoreCase = o.toString();
+                                if (compareEditTextString.equalsIgnoreCase(ignoreCase)) {
+                                    compareDuplicateInDB = o.toString();
+                                    Toast.makeText(getApplicationContext(), "Duplicate Entry", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            //search Text input for symbols or spaces. If true prevent insertion to database
+                            Pattern findSymbol = Pattern.compile("[!@#$%&`'\"\\\\()/.,_+=\\s|<>?{}\\[\\]~-]");
+                            Matcher inspectChar = findSymbol.matcher(editname.getText().toString());
+                            boolean checkForSymbol = inspectChar.find();
+
+                            if(checkForSymbol)
+                            {Toast.makeText(getApplicationContext(), "Name cannot include symbols or spaces", Toast.LENGTH_SHORT).show();}
+
+                            char stringPositionOne = 0;
+                            for(int j = 0; j <= 10; j++)
+                            {
+                                char index = (char)(j + '0'); // ASCII code if 0 = 48 this way the char is printable and detectable
+                                // eg. for i = 1 + ASCII(48) -> index = ASCII(49) = char '1'
+                                if(editname.getText().toString().charAt(0) == index)
+                                {
+                                    stringPositionOne = index;
+                                    Toast.makeText(getApplicationContext(), "Name cannot start with a number", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            String updateTableName = editname.getText().toString();
+                            if(!editname.getText().toString().isEmpty() && !checkForSymbol &&
+                                editname.getText().toString().charAt(0) != stringPositionOne && !editname.getText().toString().equals(compareDuplicateInDB))
+                            {
+
+                                UpdateData();
+                                plrImageDB.updateTable(playerTableUpdate.getText().toString(),editname.getText().toString());
+                                plrShinyDB.updateTable(playerTableUpdate.getText().toString(),editname.getText().toString());
+                                plrLuckyDB.updateTable(playerTableUpdate.getText().toString(),editname.getText().toString());
+                                playerTableUpdate.setText(editname.getText().toString());
+                            }
+
+                        }
+                    });
+
+
+                    builder.setPositiveButton("No", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            dialog.cancel();
+                        }
+                    });
+
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+
+                    renamePlayer.setTextColor(Color.parseColor("#FFFFFF"));
+                }
+
+                return false;
+            }
+        });
+
+    }
 
 
     public void DeleteData()
@@ -585,6 +691,7 @@ public class playerList extends AppCompatActivity
                 //Sets spinner selected name to EditText from spinnerPlayerName dropdown menu
                 String pName = parent.getItemAtPosition(position).toString();//get spinner text position
                 editname.setText(pName);
+                playerTableUpdate.setText(pName);
 
                 LoadData();
                 PopulateTEAM();

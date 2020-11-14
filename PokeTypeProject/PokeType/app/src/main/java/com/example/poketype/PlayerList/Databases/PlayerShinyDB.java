@@ -56,6 +56,15 @@ public class PlayerShinyDB extends SQLiteOpenHelper
         db.close();
     }
 
+    public void updateTable(String PlayerName, String PlayerNameUpdate)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateTablePlayer = "ALTER TABLE " + PlayerName + " RENAME TO " + PlayerNameUpdate;
+
+        db.execSQL(updateTablePlayer);
+        db.close();
+    }
+
     public void deleteTableS(String PlayerName)
     {
         SQLiteDatabase db = this.getWritableDatabase();
