@@ -704,6 +704,7 @@ public class playerList extends AppCompatActivity
                 String mystic = "Mystic";
                 String valor = "Valor";
 
+
                 if (SearchRow2.getText().toString().equals(instinct))
                 {
                     background.setBackgroundResource(R.drawable.instinct);
@@ -745,6 +746,19 @@ public class playerList extends AppCompatActivity
             {
                 String tName = parent.getItemAtPosition(position).toString();//get spinner text position
                 editteam.setText(tName);
+
+                String instinct = "Instinct";
+                String mystic = "Mystic";
+                String valor = "Valor";
+
+                if(spinnerTeam.getSelectedItem().equals(instinct) && !editname.getText().toString().isEmpty())
+                {background.setBackgroundResource(R.drawable.instinct);}
+
+                if(spinnerTeam.getSelectedItem().equals(mystic))
+                {background.setBackgroundResource(R.drawable.mystic);}
+
+                if(spinnerTeam.getSelectedItem().equals(valor))
+                {background.setBackgroundResource(R.drawable.valor);}
 
             }
 
